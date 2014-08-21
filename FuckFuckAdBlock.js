@@ -1,6 +1,7 @@
 // ==UserScript==
 // @name            Fuck FuckAdBlock
 // @author          Mechazawa
+// @namespace       Mechazawa
 // @description     Acts like FuckAdBlock.js but always says that no adblock was detected.
 // @license         WTFPl
 // @version         1
