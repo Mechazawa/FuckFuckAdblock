@@ -72,12 +72,13 @@
         }
         return this;
     }
-
-    FuckAdBlock.prototype.on = function(detected, fn) {
+    var addTrigger = function(detected, fn) {
         if(detected === false)
             this._var.event.notDetected.push(fn);
         return this;
     };
+    FuckAdBlock.prototype.on = addTrigger;
+    FuckAdBlock.prototype.add = addTrigger; // I saw a site using .add for some reason. It's not defined in the official script but better safe then sorry.
 
     FuckAdBlock.prototype.onDetected = function(fn) {
         return this;
