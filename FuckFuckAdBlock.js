@@ -9,6 +9,7 @@
 // @grant none
 // ==/UserScript==
 
+
 (function(window) {
     var FuckAdBlock = function(options) {
         if(options !== undefined) 
