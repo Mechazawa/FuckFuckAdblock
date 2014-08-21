@@ -40,14 +40,9 @@
     FuckAdBlock.prototype._options = {
         checkOnLoad:    true,
         resetOnEnd:     true,
-        baitClass:      '',
-        baitStyle:      '',
     };
 
     FuckAdBlock.prototype._var = {
-        version:    '3.0.1',
-        bait:       null,
-        checking:   false,
         event:  {
             notDetected: []
         }   
