@@ -27,63 +27,63 @@
         }, false);
     }
 
-    FuckAdBlock.prototype.setOption = function(options, value) {
-        if(value !== undefined) {
-            var key = options;
-            options = {};
-            options[key] = value;
+    FuckAdBlock.prototype = {
+        setOption : function(options, value) {
+            if(value !== undefined) {
+                var key = options;
+                options = {};
+                options[key] = value;
+            }
+            for(option in options)
+                this._options[option] = options[option];
+            return this;
+        },
+
+        _options : {
+            checkOnLoad:    true,
+            resetOnEnd:     true,
+        },
+
+        _var : {
+            event:  {
+                notDetected: []
+            }   
+        },
+
+        check : function(ignore) {
+            this.emitEvent(false);
+            return true;
+        },
+
+        clearEvent : function() {
+            this._var.event.notDetected = [];
+        },
+
+        emitEvent : function(detected) {
+            if(detected === false) {
+                var fns = this._var.event.notDetected;
+                for(i in fns)
+                    fns[i]();
+
+                if(this._options.resetOnEnd === true)
+                    this.clearEvent();
+            }
+            return this;
+        },
+
+        on : function(detected, fn) {
+            if(detected === false)
+                this._var.event.notDetected.push(fn);
+            return this;
+        },
+
+        onDetected : function(fn) {
+            return this;
+        },
+
+        onNotDetected : function(fn) {
+            return this.on(false, fn);
         }
-        for(option in options)
-            this._options[option] = options[option];
-        return this;
     };
-
-    FuckAdBlock.prototype._options = {
-        checkOnLoad:    true,
-        resetOnEnd:     true,
-    };
-
-    FuckAdBlock.prototype._var = {
-        event:  {
-            notDetected: []
-        }   
-    };
-
-    FuckAdBlock.prototype.check = function(ignore) {
-        this.emitEvent(false);
-        return true;
-    }
-
-    FuckAdBlock.prototype.clearEvent = function() {
-        this._var.event.notDetected = [];
-    };
-
-    FuckAdBlock.prototype.emitEvent = function(detected) {
-        if(detected === false) {
-            var fns = this._var.event.notDetected;
-            for(i in fns)
-                fns[i]();
-
-            if(this._options.resetOnEnd === true)
-                this.clearEvent();
-        }
-        return this;
-    }
-    var addTrigger = function(detected, fn) {
-        if(detected === false)
-            this._var.event.notDetected.push(fn);
-        return this;
-    };
-    FuckAdBlock.prototype.on = addTrigger;
-    FuckAdBlock.prototype.add = addTrigger; // I saw a site using .add for some reason. It's not defined in the official script but better safe then sorry.
-
-    FuckAdBlock.prototype.onDetected = function(fn) {
-        return this;
-    };
-
-    FuckAdBlock.prototype.onNotDetected = function(fn) {
-        return this.on(false, fn);
-    };
-
     window.fuckAdBlock = new FuckAdBlock();
 })(window);
