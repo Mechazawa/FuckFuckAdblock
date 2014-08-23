@@ -15,14 +15,13 @@
 (function(window) {
     var FuckAdBlock = function(options) {
         if(options !== undefined) 
-            this.setOption(options)
+            this.setOption(options);
 
         var self = this;
         window.addEventListener('load', function(){
             setTimeout(function(){
-                if(self._options.checkOnLoad === true) {
+                if(self._options.checkOnLoad === true)
                     self.check(false);
-                }
             }, 1);
         }, false);
     }
@@ -34,8 +33,10 @@
                 options = {};
                 options[key] = value;
             }
+
             for(option in options)
                 this._options[option] = options[option];
+            
             return this;
         },
 
@@ -45,9 +46,7 @@
         },
 
         _var : {
-            event:  {
-                notDetected: []
-            }   
+            triggers: []   
         },
 
         check : function(ignore) {
@@ -56,12 +55,12 @@
         },
 
         clearEvent : function() {
-            this._var.event.notDetected = [];
+            this._var.triggers = [];
         },
 
         emitEvent : function(detected) {
             if(detected === false) {
-                var fns = this._var.event.notDetected;
+                var fns = this._var.triggers;
                 for(i in fns)
                     fns[i]();
 
@@ -73,7 +72,7 @@
 
         on : function(detected, fn) {
             if(detected === false)
-                this._var.event.notDetected.push(fn);
+                this._var.triggers.push(fn);
             return this;
         },
 
@@ -85,5 +84,6 @@
             return this.on(false, fn);
         }
     };
+
     window.fuckAdBlock = new FuckAdBlock();
 })(window);
