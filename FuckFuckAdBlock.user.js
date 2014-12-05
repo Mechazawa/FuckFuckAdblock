@@ -8,7 +8,7 @@
 // @include         *
 // @run-at          document-start
 // @updateURL       https://raw.githubusercontent.com/Mechazawa/FuckFuckAdblock/master/FuckFuckAdBlock.user.js
-// @grant none
+// @grant           none
 // ==/UserScript==
 
 
