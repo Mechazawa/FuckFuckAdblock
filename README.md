@@ -1,10 +1,11 @@
 FuckFuckAdblock
 ===============
 
-A simple userscript that acts like FuckAdBlock.js but always says that no adblock was detected. Just install it and try it out at http://sitexw.fr/fuckadblock/
+A simple userscript that acts like FuckAdBlock.js but always says that no adblock was detected. Just install it and try it out at http://sitexw.fr/fuckadblock/. FuckFuckAdBlock works on the current version of FuckAdBlock(v3.1.0) and any version before that.
 
 # License 
 
+```
 DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE 
 
 Version 2, December 2004
@@ -17,4 +18,4 @@ DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
 TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 
 0. You just DO WHAT THE FUCK YOU WANT TO.
-
+```
