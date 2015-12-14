@@ -13,6 +13,8 @@
 
 
 (function(window) {
+    var debug = false;
+    
     var FuckAdBlock = function(options) {
         if(options !== undefined) 
             this.setOption(options);
@@ -24,6 +26,13 @@
                     self.check(false);
             }, 1);
         }, false);
+        
+        // hotfix
+        var self = this;
+        this.debug = {
+            set: function(x){ debug = !!x; return self;},
+            get: function(){ return debug; }
+        }
     }
 
     FuckAdBlock.prototype = {
@@ -36,7 +45,7 @@
 
             for(option in options)
                 this._options[option] = options[option];
-
+            
             return this;
         },
 
@@ -85,5 +94,7 @@
         }
     };
 
-    window.fuckAdBlock = new FuckAdBlock();
+    var fuck = new FuckAdBlock();
+    Object.defineProperties(window, {fuckAdBlock : { value: fuck, enumerable: true }});
+    Object.defineProperties(window, {blockAdBlock : { value: fuck, enumerable: true }});
 })(window);
