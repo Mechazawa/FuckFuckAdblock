@@ -70,12 +70,8 @@
         emitEvent : function(detected) {
             if(detected === false) {
                 var fns = this._var.triggers;
-                if (fns) {
-                    for (i in fns) {
-                        if (fns.hasOwnProperty(i) && fns[i] instanceof Function) {
-                            fns[i]();
-                        }
-                    }
+                for (var i = 0; i < fns.length; i += 1) {
+                    if (fns[i] instanceof Function) { fns[i](); }
                 }
                 if(this._options.resetOnEnd === true)
                     this.clearEvent();
