@@ -98,6 +98,6 @@
     for (var field in fuck) {
         Object.defineProperty(fuck, field, {value: fuck[field], configurable: false});
     }
-    Object.defineProperties(window, {fuckAdBlock : { value: fuck, enumerable: true }});
-    Object.defineProperties(window, {blockAdBlock : { value: fuck, enumerable: true }});
+    Object.defineProperties(window, {fuckAdBlock : { value: fuck, enumerable: true, writable: false }});
+    Object.defineProperties(window, {blockAdBlock : { value: fuck, enumerable: true, writable: false }});
 })(window);
