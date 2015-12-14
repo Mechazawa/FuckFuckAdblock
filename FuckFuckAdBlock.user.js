@@ -4,7 +4,7 @@
 // @namespace       Mechazawa
 // @description     Acts like FuckAdBlock.js but always says that no adblock was detected.
 // @license         WTFPl
-// @version         3
+// @version         4
 // @include         *
 // @run-at          document-start
 // @updateURL       https://raw.githubusercontent.com/Mechazawa/FuckFuckAdblock/master/FuckFuckAdBlock.user.js
@@ -14,9 +14,9 @@
 
 (function(window) {
     var debug = false;
-    
+
     var FuckAdBlock = function(options) {
-        if(options !== undefined) 
+        if(options !== undefined)
             this.setOption(options);
 
         var self = this;
@@ -26,7 +26,7 @@
                     self.check(false);
             }, 1);
         }, false);
-        
+
         // hotfix
         var self = this;
         this.debug = {
@@ -45,7 +45,7 @@
 
             for(option in options)
                 this._options[option] = options[option];
-            
+
             return this;
         },
 
@@ -55,7 +55,7 @@
         },
 
         _var : {
-            triggers: []   
+            triggers: []
         },
 
         check : function(ignore) {
@@ -95,6 +95,9 @@
     };
 
     var fuck = new FuckAdBlock();
+    for (var field in fuck) {
+        Object.defineProperty(fuck, field, {value: fuck[field], configurable: false});
+    }
     Object.defineProperties(window, {fuckAdBlock : { value: fuck, enumerable: true }});
     Object.defineProperties(window, {blockAdBlock : { value: fuck, enumerable: true }});
 })(window);
