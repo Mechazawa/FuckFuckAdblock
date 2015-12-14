@@ -70,9 +70,13 @@
         emitEvent : function(detected) {
             if(detected === false) {
                 var fns = this._var.triggers;
-                for(i in fns)
-                    fns[i]();
-
+                if (fns) {
+                    for (i in fns) {
+                        if (fns.hasOwnProperty(i) && fns[i] instanceof Function) {
+                            fns[i]();
+                        }
+                    }
+                }
                 if(this._options.resetOnEnd === true)
                     this.clearEvent();
             }
