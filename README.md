@@ -1,7 +1,7 @@
 FuckFuckAdblock
 ===============
 
-A simple userscript that acts like FuckAdBlock.js (A well known adblock detector) but always says that no adblock was detected. Just install it and try it out at http://sitexw.fr/fuckadblock/. FuckFuckAdBlock works on the current version of FuckAdBlock(v3.1.0) and any version before that. [It's kinda like a trace buster buster][tracebusterbuster]
+A simple userscript that acts like FuckAdBlock.js (A well known adblock detector) but always says that no adblock was detected. Just install it using [Tampermonkey][tampermonkey](chrome) or [Greasemonkey][greasemonkey](Firefox) and try it out at http://sitexw.fr/fuckadblock/. FuckFuckAdBlock works on the current version of FuckAdBlock(v3.1.0) and any version before that. [It's kinda like a trace buster buster][tracebusterbuster]
 
 ![screenshot](http://i.imgur.com/slDcOAI.png)
 ![screenshot beta](http://i.imgur.com/3neSZtH.png)
@@ -24,3 +24,5 @@ TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 ```
 
 [tracebusterbuster]: http://www.youtube.com/watch?v=Iw3G80bplTg
+[tampermonkey]: https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo
+[greasemonkey]: https://addons.mozilla.org/nl/firefox/addon/greasemonkey/
