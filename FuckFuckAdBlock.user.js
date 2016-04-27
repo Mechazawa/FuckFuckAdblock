@@ -28,12 +28,11 @@
         }, false);
 
         // hotfix
-        var self = this;
         this.debug = {
             set: function(x){ debug = !!x; return self;},
             get: function(){ return debug; }
-        }
-    }
+        };
+    };
 
     FuckAdBlock.prototype = {
         setOption : function(options, value) {
@@ -43,7 +42,7 @@
                 options[key] = value;
             }
 
-            for(option in options)
+            for(var option in options)
                 this._options[option] = options[option];
 
             return this;
