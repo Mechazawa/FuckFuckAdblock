@@ -3,6 +3,8 @@ FuckFuckAdblock
 
 A simple userscript that acts like FuckAdBlock.js (A well known adblock detector) but always says that no adblock was detected. Just install it using [Tampermonkey][tampermonkey] (chrome) or [Greasemonkey][greasemonkey] (Firefox) by clicking [here][raw] and try it out at http://sitexw.fr/fuckadblock/. FuckFuckAdBlock works on any version of FuckAdBlock. [It's kinda like a trace buster buster][tracebusterbuster]
 
+## This script will only counter FuckAdBlock.js and is not a general purpose anti-anti-adblocker
+
 ![screenshot](http://i.imgur.com/slDcOAI.png)
 ![screenshot beta](http://i.imgur.com/3neSZtH.png)
 
