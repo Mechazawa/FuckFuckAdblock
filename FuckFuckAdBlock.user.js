@@ -100,5 +100,6 @@
     Object.defineProperties(window, {fuckAdBlock : { value: fuck, enumerable: true, writable: false }});
     Object.defineProperties(window, {blockAdBlock : { value: fuck, enumerable: true, writable: false }});
     Object.defineProperties(window, {sniffAdBlock : { value: fuck, enumerable: true, writable: false }});
-    Object.defineProperties(window, {duckAdBlock : { value: fuck, enumerable: true, writable: false }});
+    Object.defineProperties(window, {duckAdBlock : { value: fuck, enumerable: true, writable: false }}); 
+    Object.defineProperties(window, {FuckFuckFuckAdBlock : { value: fuck, enumerable: true, writable: false }});
 })(window);
