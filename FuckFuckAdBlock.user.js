@@ -4,7 +4,7 @@
 // @namespace       Mechazawa
 // @description     Acts like FuckAdBlock.js but always says that no adblock was detected.
 // @license         WTFPl
-// @version         6
+// @version         7
 // @include         *
 // @run-at          document-start
 // @updateURL       https://raw.githubusercontent.com/Mechazawa/FuckFuckAdblock/master/FuckFuckAdBlock.user.js
